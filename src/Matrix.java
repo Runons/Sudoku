@@ -17,7 +17,7 @@ class Matrix {
     }
 
     public void runSudoku(String dif) {                            // выводит в концоль судоку с заданной сложностью dif
-        if (dif == "green love")                                                                  // Waaagh!    (╯✧▽✧)╯
+        if (dif.equalsIgnoreCase("green love"))                                                                  // Waaagh!    (╯✧▽✧)╯
             while (true) {
                 System.out.println("Waaagh!");
             }

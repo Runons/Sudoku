@@ -13,7 +13,6 @@ public class Main {
                 dif = enter.nextLine();
             } while (!dif.equals("easy") && !dif.equals("middle") && !dif.equals("hard"));
             prob1.runSudoku(dif);
-            dif=" ";
             System.out.print( "one more time? (go|stop): ");
             goStop= enter.nextLine();
             System.out.println();

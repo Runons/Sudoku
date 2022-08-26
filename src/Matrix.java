@@ -15,8 +15,8 @@ class Matrix {
         return matrixsudoku;
     }
 
-    public void runSudoku(String dif) {                            // выводит в концоль судоку с заданной сложностью dif
-        if (dif.equalsIgnoreCase("green love"))         // Waaagh!    (╯✧▽✧)╯
+    public void runSudoku(int dif) {                            // выводит в концоль судоку с заданной сложностью dif
+        if (dif==4)                                                    // Waaagh!    (╯✧▽✧)╯
             while (true) {
                 System.out.println("Waaagh!");
             }
@@ -116,13 +116,13 @@ class Matrix {
         }
     }
 
-    private void difLevel(String dif) {                               // задает сложность вставляя -1 в рандомные ячейки
+    private void difLevel(int dif) {                               // задает сложность вставляя -1 в рандомные ячейки
         int space = 0;
         int sub1, sub2;
         switch (dif) {
-            case "easy" -> space = 35;
-            case "middle" -> space = 48;
-            case "hard" -> space = 61;
+            case 1 -> space = 35;
+            case 2 -> space = 48;
+            case 3 -> space = 61;
         }
 
         while (space != 0) {

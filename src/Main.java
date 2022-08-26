@@ -6,17 +6,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner enter = new Scanner(System.in);
         Matrix prob1 = new Matrix();
-        String dif,goStop;
+        String dif;
         do {
             do {
                 System.out.print("enter the difficulty level (easy; middle; hard; green love): ");
                 dif = enter.nextLine();
-            } while (!dif.equals("easy") && !dif.equals("middle") && !dif.equals("hard"));
+            } while (!dif.equals("easy")
+                    && !dif.equals("middle")
+                    && !dif.equals("hard")
+                    && !dif.equals("green love"));
             prob1.runSudoku(dif);
             System.out.print( "one more time? (go|stop): ");
-            goStop= enter.nextLine();
+            dif= enter.nextLine();
             System.out.println();
-        }while (!goStop.equalsIgnoreCase("stop"));
+        }while (!dif.equalsIgnoreCase("stop"));
 
     }
 }

@@ -5,7 +5,6 @@ class Matrix {
 
     private int[][] matrixsudoku = new int[9][9];
     private Random rand = new Random();
-    private ArrayList<Integer> val = new ArrayList<>(9);
     private ArrayList<Integer> oneGroup = new ArrayList<>();
     private ArrayList<Integer> twoGroup = new ArrayList<>();
     private ArrayList<Integer> threeGroup = new ArrayList<>();
@@ -59,28 +58,25 @@ class Matrix {
         }
     }
 
-    private void createGroup() {                               //создает 3 группы чисел с рандромной послежовательностью
+    private void createGroup() {                               //создает 3 группы чисел с рандромной последовательностью
         Integer sub;
-        for (int i = 1; i < 10; i++) {                                      // набиваем val последовательность от 1 до 9
-            val.add(i);
+        for (int i = 1; i < 10; i++) {
+            oneGroup.add(i);
         }
-        for (int i = 1; i < 4; i++) {                            //добавляем в одну из групп число и удаляем его из val
-            sub = val.get(rand.nextInt(val.size()));
-            oneGroup.add(sub);
-            val.remove(sub);
-            sub = val.get(rand.nextInt(val.size()));
+        for (int i = 1; i < 4; i++) {                        //добавляем в другие группы числа и удаляем его из oneGroup
+            sub =oneGroup.get(rand.nextInt(oneGroup.size()));
             twoGroup.add(sub);
-            val.remove(sub);
-            sub = val.get(rand.nextInt(val.size()));
+            oneGroup.remove(sub);
+            sub = oneGroup.get(rand.nextInt(oneGroup.size()));
             threeGroup.add(sub);
-            val.remove(sub);
+            oneGroup.remove(sub);
         }
 
 
     }
 
     private void addInMatrix(int i, int j, ArrayList<Integer> numGroup) { // записывает числа из группы в матрицу
-        Integer number = numGroup.get(j % 3);
+        Integer number = numGroup.get(j % 3); // перебор стобцов
         matrixsudoku[i][j] = number;
     }
 

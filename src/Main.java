@@ -17,7 +17,7 @@ public class Main {
             System.out.print( "one more time? (go|stop): ");
             goStop= enter.nextLine();
             System.out.println();
-        }while (!goStop.toLowerCase().equals("stop"));
+        }while (!goStop.equalsIgnoreCase("stop"));
 
     }
 }

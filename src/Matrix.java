@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
-
+@Deprecated
 class Matrix {
 
     private int[][] matrixsudoku = new int[9][9];
@@ -71,8 +71,6 @@ class Matrix {
             threeGroup.add(sub);
             oneGroup.remove(sub);
         }
-
-
     }
 
     private void addInMatrix(int i, int j, ArrayList<Integer> numGroup) { // записывает числа из группы в матрицу
